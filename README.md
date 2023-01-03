@@ -15,6 +15,7 @@ To use this app the user simply needs to search for a city they wish to know the
 The github pages link is: https://markjnap.github.io/weather-dashboard/
 
 Webpage demo:
+
 [<img src="/assets/images/Weather-Dashboard.gif" alt="Weather Dashboard Demo"/>](/assets/images/Weather-Dashboard.gif)
 
 ## Credits
