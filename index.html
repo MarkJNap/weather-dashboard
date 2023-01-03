@@ -18,14 +18,16 @@
         <!-- Search bar on the left with prior searches -->
         <div class="container columns box">
             <aside class="column is-3 box">
-                <form>
+                <form id="city-search-form">
                     <label>Search for a City:</label>
-                    <input type="text" placeholder="Perth">
-                    <button type="submit"> Search</button>
+                    <input type="text" placeholder="Perth" id="city">
+                    <button type="submit" id="city-searched"> Search</button>
                 </form>
                 <section>
                     <h2>Recent Searches:</h2>
-                    <p>Perth</p>
+                    <ul id="recent-cities">
+
+                    </ul>
                 </section>
             </aside><!-- Current Date and Todays Temp -->
             <div class="section column">
@@ -75,6 +77,7 @@
             </div>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
