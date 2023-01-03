@@ -7,7 +7,7 @@ $(function () {
 
   // Function for getting the current day weather and displaying the information
   function getCurrentWeather(city) {
-    requestCurrentUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
+    requestCurrentUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
     fetch(requestCurrentUrl)
     .then(function (response) {
       return response.json();
@@ -36,7 +36,7 @@ $(function () {
       currentTempEl.text("Temp: " + data.main.temp + "°C");
       currentWindEl.text("Wind speed: " + windSpeed + "km/h");
       currentHumidityEl.text("Humidity: " + data.main.humidity + "%");
-      currentimgEl.attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png")
+      currentimgEl.attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png")
     
       // Gets the Date to display for current and the 5 day forecast
       dateSet();
@@ -45,7 +45,7 @@ $(function () {
 
   // Function for getting the 5 Day forecast and displaying the information
   function getForecast(city) {
-    requestForecastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey + "&units=metric";
+    requestForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey + "&units=metric";
     fetch(requestForecastUrl)
     .then(function (response) {
       return response.json()
@@ -60,7 +60,7 @@ $(function () {
       tempEl1.text("Temp: " + data.list[0].main.temp + "°C")
       windEl1.text("Wind Speed: " + Number(data.list[0].wind.speed*3.6).toFixed(2) + "km/h")
       humidityEl1.text("Humidity: " + data.list[0].main.humidity + "%")
-      imgEl1.attr("src", "http://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png")
+      imgEl1.attr("src", "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png")
 
       
       // Day 2 Information
@@ -72,7 +72,7 @@ $(function () {
       tempEl2.text("Temp: " + data.list[8].main.temp + "°C")
       windEl2.text("Wind Speed: " + Number(data.list[8].wind.speed*3.6).toFixed(2) + "km/h")
       humidityEl2.text("Humidity: " + data.list[8].main.humidity + "%")
-      imgEl2.attr("src", "http://openweathermap.org/img/w/" + data.list[8].weather[0].icon + ".png")
+      imgEl2.attr("src", "https://openweathermap.org/img/w/" + data.list[8].weather[0].icon + ".png")
 
 
 
@@ -86,7 +86,7 @@ $(function () {
       tempEl3.text("Temp: " + data.list[16].main.temp + "°C")
       windEl3.text("Wind Speed: " + Number(data.list[16].wind.speed*3.6).toFixed(2) + "km/h")
       humidityEl3.text("Humidity: " + data.list[16].main.humidity + "%")
-      imgEl3.attr("src", "http://openweathermap.org/img/w/" + data.list[16].weather[0].icon + ".png")
+      imgEl3.attr("src", "https://openweathermap.org/img/w/" + data.list[16].weather[0].icon + ".png")
 
 
 
@@ -100,7 +100,7 @@ $(function () {
       tempEl4.text("Temp: " + data.list[24].main.temp + "°C")
       windEl4.text("Wind Speed: " + Number(data.list[24].wind.speed*3.6).toFixed(2) + "km/h")
       humidityEl4.text("Humidity: " + data.list[24].main.humidity + "%")
-      imgEl4.attr("src", "http://openweathermap.org/img/w/" + data.list[24].weather[0].icon + ".png")
+      imgEl4.attr("src", "https://openweathermap.org/img/w/" + data.list[24].weather[0].icon + ".png")
 
 
 
@@ -114,7 +114,7 @@ $(function () {
       tempEl5.text("Temp: " + data.list[32].main.temp + "°C")
       windEl5.text("Wind Speed: " + Number(data.list[32].wind.speed*3.6).toFixed(2) + "km/h")
       humidityEl5.text("Humidity: " + data.list[32].main.humidity + "%")
-      imgEl5.attr("src", "http://openweathermap.org/img/w/" + data.list[32].weather[0].icon + ".png")
+      imgEl5.attr("src", "https://openweathermap.org/img/w/" + data.list[32].weather[0].icon + ".png")
     });
   }
   // Function for displaying the date
