@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header class="title box">
+    <header class="title is-1 box">
         <h1>Weather Dashboard</h1>
     </header>
 
@@ -19,20 +19,20 @@
         <div class="container columns box">
             <aside class="column is-3 box">
                 <form id="city-search-form">
-                    <label>Search for a City:</label>
-                    <input type="text" placeholder="Perth" id="city">
-                    <button type="submit" id="city-searched"> Search</button>
+                    <label class="title">Search for a City:</label>
+                    <input class="input is-primary is-rounded my-2" type="text" placeholder="Perth" id="city">
+                    <button class="button is-rounded my-3" type="submit" id="city-searched"> Search</button>
                 </form>
                 <section>
-                    <h2>Recent Searches:</h2>
-                    <ul id="recent-cities">
+                    <h2 class="title is-5">Recent Search History:</h2>
+                    <div id="recent-cities">
 
-                    </ul>
+                    </div>
                 </section>
             </aside><!-- Current Date and Todays Temp -->
             <div class="section column">
                 <div class="column box">
-                    <h2 id="current-city">Current City</h2>
+                    <h2 class="title" id="current-city">Current City</h2>
                     <img id="current-weather-icon"/>
                     <h3 id="current-date">Current Date</h3>
                     <p id="current-temp">Temp:</p>
@@ -44,35 +44,35 @@
                     <h2 class="box title">5 Day Forecast</h2>
                     <div class="columns">
                         <article class="column card custom-forecast">
-                            <h4 class="card-header-title">Date 1</h4>
+                            <h4 class="card-header-title" id="date-forecast-one">Date 1</h4>
                             <img id="weather-icon-one"/>
                             <p id="temp-one">Temp:</p>
                             <p id="wind-one">Wind:</p>
                             <p id="humidity-one">Humidity:</p>
                         </article>
                         <article class="column card custom-forecast">
-                            <h4 class="card-header-title">Date 2</h4>
+                            <h4 class="card-header-title" id="date-forecast-two">Date 2</h4>
                             <img id="weather-icon-two"/>
                             <p id="temp-two">Temp:</p>
                             <p id="wind-two">Wind:</p>
                             <p id="humidity-two">Humidity:</p>
                         </article>
                         <article class="column card custom-forecast">
-                            <h4 class="card-header-title">Date 3</h4>
+                            <h4 class="card-header-title" id="date-forecast-three">Date 3</h4>
                             <img id="weather-icon-three"/>
                             <p id="temp-three">Temp:</p>
                             <p id="wind-three">Wind:</p>
                             <p id="humidity-three">Humidity:</p>
                         </article>
                         <article class="column card custom-forecast">
-                            <h4 class="card-header-title">Date 4</h4>
+                            <h4 class="card-header-title" id="date-forecast-four">Date 4</h4>
                             <img id="weather-icon-four"/>
                             <p id="temp-four">Temp:</p>
                             <p id="wind-four">Wind:</p>
                             <p id="humidity-four">Humidity:</p>
                         </article>
                         <article class="column card custom-forecast">
-                            <h4 class="card-header-title">Date 5</h4>
+                            <h4 class="card-header-title" id="date-forecast-five">Date 5</h4>
                             <img id="weather-icon-five"/>
                             <p id="temp-five">Temp:</p>
                             <p id="wind-five">Wind:</p>

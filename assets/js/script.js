@@ -2,9 +2,8 @@
 $(function () {
   // API Key to get the weather information
   const apiKey = "2d3402229563fbfc5f169c939d8dc026";
-
-  // For icon usage
-  // http://openweathermap.org/img/w/10d.png
+  let pastSearches = []
+  let listedCitiesEl = $("#recent-cities")
 
   // Function for getting the current day weather and displaying the information
   function getCurrentWeather(city) {
@@ -15,9 +14,14 @@ $(function () {
     })
     .then(function (data) {
       console.log(data);
-      //Adds the searched city to the recent searches list
-      let newCity = $("<li>").text(city);
-      $("#recent-cities").append(newCity);
+      let city = data.name
+      if (!city) {
+        return
+      }
+      pastSearches.unshift(city)
+      storeCity()
+      listLoadedCities(pastSearches)
+
 
       // Variables for setting the information
       let currentCityEl = $("#current-city");
@@ -34,8 +38,8 @@ $(function () {
       currentHumidityEl.text("Humidity: " + data.main.humidity + "%");
       currentimgEl.attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png")
     
-      // Gets the current Date to display
-      currentTime();
+      // Gets the Date to display for current and the 5 day forecast
+      dateSet();
     });
   }
 
@@ -47,8 +51,6 @@ $(function () {
       return response.json()
     })
     .then(function (data) {
-      // console.log(data);
-      // TODO Put this in some kind of loop if have the time
       // Day 1 Information
       let tempEl1 = $("#temp-one")
       let windEl1 = $("#wind-one")
@@ -115,10 +117,41 @@ $(function () {
       imgEl5.attr("src", "http://openweathermap.org/img/w/" + data.list[32].weather[0].icon + ".png")
     });
   }
-  // Function for displaying the current time
-  function currentTime() {
+  // Function for displaying the date
+  function dateSet() {
     const today = dayjs()
     $("#current-date").text(today.format("dddd, D MMM YYYY"))
+    $("#date-forecast-one").text(today.format("dddd, D MMM YYYY"))
+    $("#date-forecast-two").text(today.add(1,"day").format("dddd, D MMM YYYY"))
+    $("#date-forecast-three").text(today.add(2,"day").format("dddd, D MMM YYYY"))
+    $("#date-forecast-four").text(today.add(3,"day").format("dddd, D MMM YYYY"))
+    $("#date-forecast-five").text(today.add(4,"day").format("dddd, D MMM YYYY"))
+  }
+
+  //Loads any previously searched cities 
+  loadCities();
+
+  function storeCity() {
+    localStorage.setItem("pastSearches", JSON.stringify(pastSearches))
+  }
+
+  function loadCities() {
+    const savedCities = JSON.parse(localStorage.getItem('pastSearches'))
+    console.log(savedCities);
+  }
+
+  listLoadedCities(pastSearches)
+
+  function listLoadedCities(pastSearches) {
+    // Didnt get this finished / working :(
+    listedCitiesEl.empty()
+    pastSearches.forEach(function() {
+      let cityDiv = $('<div>');
+      let cityBtn = $('<button>').addClass('button is-link').text(location.pastSearches);
+      cityDiv.append(cityBtn)
+      listedCitiesEl.append(cityDiv)
+    })
+
   }
 
   // When a city is submitted it runs needed functions
@@ -128,6 +161,7 @@ $(function () {
     getForecast(city);
     getCurrentWeather(city);
   })
+
 
 
 
