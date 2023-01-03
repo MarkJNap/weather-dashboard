@@ -4,73 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
 
 <body>
-    <header>
+    <header class="title box">
         <h1>Weather Dashboard</h1>
     </header>
 
     <main>
-        <section>
-            <!-- Current Date and Todays Temp -->
-            <div>
-                <h2>Current City</h2>
-                <h3>Current Date</h3>
-                <p>Temp:</p>
-                <p>Wind:</p>
-                <p>Humidity:</p>
-            </div>
-            <!-- 5 Day forecast -->
-            <div>
-                <h2>5 Day Forecast</h2>
-                <article>
-                    <h4>Date 1</h4>
-                    <p>Temp:</p>
-                    <p>Wind:</p>
-                    <p>Humidity:</p>
-                </article>
-                <article>
-                    <h4>Date 2</h4>
-                    <p>Temp:</p>
-                    <p>Wind:</p>
-                    <p>Humidity:</p>
-                </article>
-                <article>
-                    <h4>Date 3</h4>
-                    <p>Temp:</p>
-                    <p>Wind:</p>
-                    <p>Humidity:</p>
-                </article>
-                <article>
-                    <h4>Date 4</h4>
-                    <p>Temp:</p>
-                    <p>Wind:</p>
-                    <p>Humidity:</p>
-                </article>
-                <article>
-                    <h4>Date 5</h4>
-                    <p>Temp:</p>
-                    <p>Wind:</p>
-                    <p>Humidity:</p>
-                </article>
-            </div>
-        </section>
-
         <!-- Search bar on the left with prior searches -->
-        <aside>
-            <form>
-                <label>Search for a City:</label>
-                <input type="text" placeholder="London">
-                <button type="submit"> Search</button>
-            </form>
-            <section>
-                <h2>Recent Searches:</h2>
-                <p>Perth</p>
-            </section>
-        </aside>
+        <div class="container columns box">
+            <aside class="column is-3 box">
+                <form>
+                    <label>Search for a City:</label>
+                    <input type="text" placeholder="Perth">
+                    <button type="submit"> Search</button>
+                </form>
+                <section>
+                    <h2>Recent Searches:</h2>
+                    <p>Perth</p>
+                </section>
+            </aside><!-- Current Date and Todays Temp -->
+            <div class="section column">
+                <div class="column box">
+                    <h2>Current City</h2>
+                    <h3>Current Date</h3>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
+                </div>
+                <section class=" column box">
+                    <!-- 5 Day forecast -->
+                    <h2 class="box title">5 Day Forecast</h2>
+                    <div class="columns">
+                        <article class="column card">
+                            <h4 class="card-header-title">Date 1</h4>
+                            <p>Temp:</p>
+                            <p>Wind:</p>
+                            <p>Humidity:</p>
+                        </article>
+                        <article class="column card">
+                            <h4 class="card-header-title">Date 2</h4>
+                            <p>Temp:</p>
+                            <p>Wind:</p>
+                            <p>Humidity:</p>
+                        </article>
+                        <article class="column card">
+                            <h4 class="card-header-title">Date 3</h4>
+                            <p>Temp:</p>
+                            <p>Wind:</p>
+                            <p>Humidity:</p>
+                        </article>
+                        <article class="column card">
+                            <h4 class="card-header-title">Date 4</h4>
+                            <p>Temp:</p>
+                            <p>Wind:</p>
+                            <p>Humidity:</p>
+                        </article>
+                        <article class="column card">
+                            <h4 class="card-header-title">Date 5</h4>
+                            <p>Temp:</p>
+                            <p>Wind:</p>
+                            <p>Humidity:</p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
     </main>
     <script src="./assets/js/script.js"></script>
 </body>
